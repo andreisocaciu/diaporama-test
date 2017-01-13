@@ -1,0 +1,86 @@
+{
+  "timeline": [
+    {
+      "image": "cafes.jpeg",
+      "duration": 1000,
+      "transitionNext": {
+        "uniforms": {
+          "smoothness": 0.03
+        },
+        "name": "undulating burn out",
+        "duration": 1000
+      }
+    },
+    {
+      "image": "le_long_du_lac.jpeg",
+      "duration": 1000,
+      "transitionNext": {
+        "name": "CrossZoom",
+        "duration": 1000
+      }
+    },
+    {
+      "image": "champ_sauvage.jpeg",
+      "duration": 1000,
+      "transitionNext": {
+        "name": "PageCurl",
+        "duration": 1000
+      }
+    },
+    {
+      "image": "moutons.jpg",
+      "duration": 1000,
+      "transitionNext": {
+        "name": "AdvancedMosaic",
+        "duration": 1000
+      }
+    },
+    {
+      "image": "leopard.jpeg",
+      "duration": 1000,
+      "transitionNext": {
+        "name": "Glitch Memories",
+        "duration": 1000
+      }
+    },
+    {
+      "image": "shaggy.jpeg",
+      "duration": 1000,
+      "transitionNext": {
+        "name": "doorway",
+        "duration": 1000
+      }
+    },
+    {
+      "image": "galets.jpeg",
+      "duration": 1000,
+      "transitionNext": {
+        "name": "swap",
+        "duration": 1000
+      }
+    },
+    {
+      "image": "mer_agite.jpeg",
+      "duration": 1000,
+      "transitionNext": {
+        "name": "cube",
+        "duration": 1000
+      }
+    },
+    {
+      "image": "sous_le_ponton.jpg",
+      "duration": 1000,
+      "transitionNext": {
+        "name": "ripple",
+        "duration": 1000
+      }
+    },
+    {
+      "image": "phare.jpeg",
+      "duration": 1000,
+      "transitionNext": {
+        "duration": 1000
+      }
+    }
+  ]
+}

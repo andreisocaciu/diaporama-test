@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diaporama</title>
+    <style>
+        body {
+            background: #000000;
+            color: #ffffff;
+            margin: 0;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div id="diaporama"></div>
+    <!--<audio id="audio" src="./Capital Cities - Safe And Sound.mp3"></audio>-->
+    <!--<audio id="audio" src="./RING_Autobuz.mp3"></audio>-->
+    <audio id="audio" src="./FlyOn.mp3"></audio>
+    <script src="./diaporama.bundle.js"></script>
+    <script>
+        var audio = document.getElementById('audio');
+
+        window.diaporama = null;
+        Qajax.getJSON("./diaporama_simplified.json").then(function (json) {
+            var div = document.getElementById("diaporama");
+
+            var diaporama = Diaporama(div, {
+                data: json,
+                autoplay: false,
+                loop: false,
+                width: 800,
+                height: 600
+            });
+
+            document.body.addEventListener("keydown", function (e) {
+                switch (e.which) {
+                    case 38: // Up
+                        diaporama.playbackRate *= 1.5;
+                        break;
+                    case 40: // Down
+                        diaporama.playbackRate /= 1.5;
+                        break;
+                    case 37: // Left
+                        diaporama.prev();
+                        break;
+                    case 39: // Right
+                        diaporama.next();
+                        break;
+                    case 32: // Space
+                        diaporama.paused = !diaporama.paused;
+                        if (!audio.paused) {
+                            audio.pause();
+                        } else {
+                            audio.play();
+                        }
+                        break;
+                }
+            });
+
+            window.diaporama = diaporama;
+
+            window.diaporama.on('ended', function () {
+                audio.pause();
+            });
+
+            window.diaporama.on('transition', replayAudio);
+            window.diaporama.on('transitionEnd', replayAudio);
+            window.diaporama.on('slide', replayAudio);
+            window.diaporama.on('slideEnd', replayAudio);
+
+            function replayAudio() {
+                if (diaporama.paused) {
+                    return;
+                }
+                if (audio.paused) {
+                    audio.play();
+                }
+            }
+        }).done();
+
+
+    </script>
+</body>
+</html>

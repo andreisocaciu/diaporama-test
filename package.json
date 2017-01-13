@@ -1,0 +1,33 @@
+{
+  "name": "gl-slideshow-example",
+  "version": "2.0.1",
+  "description": "WebGL Image Slidershow example with KenBurns effect and GLSL Transitions",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gre/gl-slideshow-example"
+  },
+  "keywords": [
+    "slideshow",
+    "webgl",
+    "kenburns",
+    "glsl-transition"
+  ],
+  "author": "Gaëtan Renaudeau",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gre/gl-slideshow-example/issues"
+  },
+  "homepage": "https://github.com/gre/gl-slideshow-example",
+  "dependencies": {
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "diaporama": "^1.5.2",
+    "garnish": "^2.1.3",
+    "glsl-transitions": "^2015.2.15",
+    "webpack": "^1.14.0"
+  },
+  "devDependencies": {
+    "json-loader": "^0.5.4"
+  }
+}
